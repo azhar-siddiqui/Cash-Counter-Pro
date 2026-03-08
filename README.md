@@ -1,22 +1,153 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CashCounter Pro - Precision Currency Counter
 
-## Getting Started
+A professional, SEO-optimized currency counting application built with Next.js 14, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## 🚀 Features
+
+- **Multi-Currency Support**: Support for 150+ currencies including USD, EUR, INR, GBP
+- **Real-time Calculation**: Instant cash counting with live totals
+- **Professional UI**: Clean, modern interface with dark/light theme support
+- **Mobile Responsive**: Optimized for all devices
+- **SEO Optimized**: Built for search engine visibility
+- **Performance Focused**: Fast loading with Core Web Vitals optimization
+- **PWA Ready**: Installable web app with offline capabilities
+- **Accessibility**: WCAG compliant with proper ARIA labels
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS + Shadcn/ui
+- **Theme**: next-themes
+- **Icons**: Lucide React
+- **Fonts**: Geist Sans & Geist Mono
+- **Country Data**: country-data-list
+
+## 📈 SEO & Performance Optimizations
+
+### SEO Features
+
+- ✅ Comprehensive meta tags (title, description, keywords)
+- ✅ Open Graph and Twitter Card support
+- ✅ Structured data (JSON-LD) for rich snippets
+- ✅ Semantic HTML with proper heading hierarchy
+- ✅ XML sitemap and robots.txt
+- ✅ Canonical URLs and hreflang tags
+- ✅ Mobile-first responsive design
+
+### Performance Optimizations
+
+- ✅ Server-side rendering (SSR)
+- ✅ Static asset optimization
+- ✅ Image optimization with WebP/AVIF support
+- ✅ Font optimization with display=swap
+- ✅ Code splitting and lazy loading
+- ✅ CSS optimization and minification
+- ✅ HTTP/2 server push
+- ✅ Service worker for caching
+- ✅ Core Web Vitals optimization
+
+### Security Features
+
+- ✅ Content Security Policy (CSP)
+- ✅ HTTPS enforcement
+- ✅ XSS protection
+- ✅ CSRF protection
+- ✅ Secure headers
+
+## 🏃‍♂️ Getting Started
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/yourusername/cashcounter-pro.git
+   cd cashcounter-pro
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open [http://localhost:3000](http://localhost:3000)**
+
+## 📊 SEO Checklist
+
+- [x] Title tag (50-60 characters)
+- [x] Meta description (150-160 characters)
+- [x] Keywords research and implementation
+- [x] Open Graph tags
+- [x] Twitter Card tags
+- [x] Structured data markup
+- [x] XML sitemap
+- [x] Robots.txt
+- [x] Canonical URLs
+- [x] Mobile responsiveness
+- [x] Page speed optimization
+- [x] HTTPS implementation
+- [x] SSL certificate
+- [x] Search console setup
+- [x] Analytics integration
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deploy to Vercel with one click.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Other Platforms
+
+The app is optimized for deployment on:
+
+- Vercel
+- Netlify
+- AWS Amplify
+- DigitalOcean App Platform
+
+## 📱 PWA Features
+
+- Installable on mobile devices
+- Offline functionality
+- Push notifications (future)
+- App-like experience
+
+## 🔍 Analytics & Monitoring
+
+- Google Analytics 4 integration
+- Core Web Vitals monitoring
+- Error tracking with Sentry
+- Performance monitoring
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Support
+
+For support, email support@cashcounterpro.com or join our Discord community.
+
+---
+
+**Built with ❤️ for financial professionals worldwide**
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
