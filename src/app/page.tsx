@@ -94,7 +94,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background p-3 sm:p-6 md:p-8 font-sans transition-colors duration-500">
       <div className="max-w-5xl mx-auto">
-        <Header isDark={true} toggleTheme={() => {}} />
+        <Header />
 
         <main className="pb-24 md:pb-0">
           <CountrySelector
