@@ -2,10 +2,16 @@
 
 import { Banknote, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
 export const Header = () => {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -33,7 +39,7 @@ export const Header = () => {
         className="rounded-full hover:scale-110 transition-transform active:scale-95"
         size="icon"
       >
-        {theme === "dark" ? (
+        {mounted && theme === "dark" ? (
           <Sun className="size-4" />
         ) : (
           <Moon className="size-4" />

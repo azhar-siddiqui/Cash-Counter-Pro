@@ -79,7 +79,7 @@ export const SummaryFooter: React.FC<SummaryFooterProps> = ({
             className="cursor-pointer"
           >
             <Share2 className="size-4" />
-            <span className="text-secondary-foreground">Share</span>
+            <span className="text-foreground">Share</span>
           </Button>
         </div>
       </div>
