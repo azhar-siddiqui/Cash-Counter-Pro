@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "CashCounter Pro",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/icon.svg",
         width: 1200,
         height: 630,
         alt: "CashCounter Pro - Professional Currency Counter",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "CashCounter Pro - Precision Currency Counter",
     description:
       "Free online currency counter for precise cash calculations. Count money quickly with our professional cash counter.",
-    images: ["/og-image.jpg"],
+    images: ["/icon.svg"],
   },
   alternates: {
     canonical: "https://cashcounterpro.com",
@@ -81,7 +81,7 @@ export function generateStructuredData() {
       "Mobile responsive design",
       "Fast and accurate calculations",
     ],
-    screenshot: "/og-image.jpg",
+    screenshot: "/icon.svg",
     softwareVersion: "1.0.0",
     datePublished: "2024-01-01",
     aggregateRating: {
