@@ -5,8 +5,37 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const numberToWords = (num: number): string => {
+export const numberToWords = (
+  num: number,
+  currencyCode: string = "INR",
+): string => {
   if (num === 0) return "Zero";
+
+  const currencyNames: Record<string, string> = {
+    INR: "Rupees",
+    USD: "Dollars",
+    EUR: "Euros",
+    GBP: "Pounds",
+    JPY: "Yen",
+    AUD: "Dollars",
+    CAD: "Dollars",
+    CHF: "Francs",
+    CNY: "Yuan",
+    SEK: "Kronor",
+    NZD: "Dollars",
+    MXN: "Pesos",
+    SGD: "Dollars",
+    HKD: "Dollars",
+    NOK: "Kroner",
+    KRW: "Won",
+    TRY: "Lira",
+    RUB: "Rubles",
+    BRL: "Reais",
+    ZAR: "Rand",
+    // Add more as needed
+  };
+
+  const currencyName = currencyNames[currencyCode] || "Units";
 
   const a = [
     "",
@@ -43,17 +72,45 @@ export const numberToWords = (num: number): string => {
     "Ninety",
   ];
 
+  // const format = (n: number): string => {
+  //   if (n < 20) return a[n];
+  //   if (n < 100)
+  //     return b[Math.floor(n / 10)] + (n % 10 !== 0 ? " " + a[n % 10] : "");
+  //   if (n < 1000)
+  //     return (
+  //       a[Math.floor(n / 100)] +
+  //       " Hundred" +
+  //       (n % 100 !== 0 ? " and " + format(n % 100) : "")
+  //     );
+  //   return "";
+  // };
+
   const format = (n: number): string => {
     if (n < 20) return a[n];
-    if (n < 100)
-      return b[Math.floor(n / 10)] + (n % 10 !== 0 ? " " + a[n % 10] : "");
-    if (n < 1000)
-      return (
-        a[Math.floor(n / 100)] +
-        " Hundred" +
-        (n % 100 !== 0 ? " and " + format(n % 100) : "")
-      );
-    return "";
+
+    if (n < 100) {
+      const tenWord = b[Math.floor(n / 10)];
+      const ones = n % 10;
+
+      // Positive condition – clearer
+      if (ones > 0) {
+        return tenWord + " " + a[ones];
+      }
+      return tenWord;
+    }
+
+    if (n < 1000) {
+      const hundredWord = a[Math.floor(n / 100)] + " Hundred";
+      const remainder = n % 100;
+
+      // Same idea here – positive is more readable
+      if (remainder > 0) {
+        return hundredWord + " and " + format(remainder);
+      }
+      return hundredWord;
+    }
+
+    return ""; // or throw new Error("Number too large") etc.
   };
 
   const makeGroup = (n: number, label: string): string => {
@@ -73,5 +130,5 @@ export const numberToWords = (num: number): string => {
   res += makeGroup(thousand, "Thousand");
   res += format(remaining);
 
-  return res.trim() + " Rupees Only";
+  return res.trim() + " " + currencyName + " Only";
 };

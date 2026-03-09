@@ -75,6 +75,7 @@ export default function Home() {
               <SummaryFooter
                 total={total}
                 symbol={selectedCurrency.symbol}
+                currencyCode={selectedCurrency.code}
                 onReset={handleReset}
                 onCopy={handleCopy}
                 onShare={handleShare}

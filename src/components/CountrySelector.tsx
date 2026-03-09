@@ -27,20 +27,25 @@ export const CountrySelector: React.FC<CountrySelectorProps> = ({
 
   return (
     <div className="mb-6">
-      <label className="block text-[10px] font-bold text-muted-foreground mb-2 uppercase tracking-widest">
+      <label
+        htmlFor="country-selector"
+        className="block text-[10px] font-bold text-muted-foreground mb-2 uppercase tracking-widest"
+      >
         Select Country & Currency
       </label>
 
       <Popover.Root open={open} onOpenChange={setOpen}>
         <Popover.Trigger asChild>
           <Button
+            id="country-selector"
             variant="outline"
             className="w-full justify-between"
             role="combobox"
+            size="lg"
             aria-expanded={open}
           >
             <div className="flex items-center gap-3 truncate">
-              <div className="shrink-0 h-5 w-5 overflow-hidden rounded-full shadow-sm">
+              <div className="shrink-0 size-5 overflow-hidden rounded-full shadow-sm">
                 <CircleFlag countryCode={selectedCode.toLowerCase()} />
               </div>
               <span className="truncate">
