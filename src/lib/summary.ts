@@ -35,5 +35,4 @@ export async function shareSummary(summary: string) {
 
 export function copyToClipboard(text: string) {
   navigator.clipboard.writeText(text);
-  alert("Summary copied to clipboard!");
 }

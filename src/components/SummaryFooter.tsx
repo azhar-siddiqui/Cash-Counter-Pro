@@ -1,6 +1,6 @@
 import { numberToWords } from "@/lib/utils";
-import { Copy, Share2, Trash2 } from "lucide-react";
-import React from "react";
+import { Check, Copy, Share2, Trash2 } from "lucide-react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 
 interface SummaryFooterProps {
@@ -20,7 +20,14 @@ export const SummaryFooter: React.FC<SummaryFooterProps> = ({
   onCopy,
   onShare,
 }) => {
+  const [copied, setCopied] = useState(false);
   const words = numberToWords(total, currencyCode);
+
+  const handleCopy = () => {
+    onCopy();
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <div className="p-4 md:p-6 glass-card rounded-2xl border-t-4 border-t-primary shadow-2xl">
@@ -51,13 +58,19 @@ export const SummaryFooter: React.FC<SummaryFooterProps> = ({
             <span className="text-secondary-foreground">Reset</span>
           </Button>
           <Button
-            variant="secondary"
+            variant={copied ? "success" : "secondary"}
             size="lg"
-            onClick={onCopy}
+            onClick={handleCopy}
             className="cursor-pointer"
           >
-            <Copy className="size-4" />
-            <span className="text-secondary-foreground">Copy</span>
+            {copied ? (
+              <Check className="size-4" />
+            ) : (
+              <Copy className="size-4" />
+            )}
+            <span className="text-secondary-foreground">
+              {copied ? "Copied" : "Copy"}
+            </span>
           </Button>
           <Button
             variant="default"

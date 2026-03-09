@@ -2,6 +2,7 @@ import { Banknote, Coins } from "lucide-react";
 import { motion } from "motion/react";
 import React from "react";
 import { Denomination } from "../types";
+import { Input } from "./ui/input";
 
 interface DenominationRowProps {
   denomination: Denomination;
@@ -48,15 +49,15 @@ export const DenominationRow: React.FC<DenominationRowProps> = ({
 
       <div className="flex items-center gap-2 md:gap-3 mx-2">
         <span className="text-muted-foreground font-medium text-sm md:text-base">
-          ×
+          x
         </span>
-        <input
+        <Input
           type="number"
           min="0"
           value={count || ""}
           placeholder="0"
           onChange={(e) => onChange(Number.parseInt(e.target.value) || 0)}
-          className="w-16 md:w-24 px-2 md:px-3 py-1.5 md:py-2 text-center font-bold text-base md:text-lg rounded-lg border border-input bg-background focus:ring-2 focus:ring-ring outline-none transition-all"
+          className="w-16 md:w-24 px-2 md:px-3 py-1.5 md:py-2 font-bold text-base md:text-lg rounded-lg border border-input bg-background focus:ring-2 focus:ring-ring outline-none transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
         />
       </div>
 
